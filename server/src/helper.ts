@@ -21,9 +21,18 @@ export const consumeMessages = async (topic: string) => {
         value: data,
       });
 
-      await prisma.chats.create({
-        data: data,
-      });
+      // await prisma.chats.create({
+      //   data: data,
+      // });
+     
+      try {
+        await prisma.chats.create({
+          data: data,
+        });
+        console.log("Chat saved to DB:", data);
+      } catch (error) {
+        console.error("Error saving chat to DB:", error);
+      }
 
       // Process the message (e.g., save to DB, trigger some action, etc.)
     },
