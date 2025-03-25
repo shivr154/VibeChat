@@ -47,19 +47,9 @@ export default function Chats({
       created_at: new Date().toISOString(),
       group_id: group.id,
     };
-    // socket.emit("message", payload);
-    // setMessage("");
-    // setMessages([...messages, payload]);
-
-    socket.emit("message", payload, (ack: { success: boolean; error?: string }) => {
-      if (ack.success) {
-        setMessages((prevMessages) => [...prevMessages, payload]);
-        setMessage("");
-      } else {
-        console.error("Message send error:", ack.error);
-      }
-    });
-
+    socket.emit("message", payload);
+    setMessage("");
+    setMessages([...messages, payload]);
   };
 
   return (
