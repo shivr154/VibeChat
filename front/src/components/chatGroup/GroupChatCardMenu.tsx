@@ -28,6 +28,7 @@ export default function GroupChatCardMenu({
     navigator.clipboard?.writeText(`${Env.APP_URL}/chat/${group.id}`);
     toast.success("Link copied successfully!");
   };
+  
 
   return (
     <>
