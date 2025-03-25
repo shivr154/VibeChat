@@ -43,12 +43,14 @@ export const authOptions: AuthOptions = {
         user.token = data?.user?.token;
         return true;
       } catch (error) {
-        if (error instanceof AxiosError) {
-          return redirect(`/auth/error?message=${error.message}`);
-        }
-        return redirect(
-          `/auth/error?message=Something went wrong.please try again!`
-        );
+        // if (error instanceof AxiosError) {
+        //   return redirect(`/auth/error?message=${error.message}`);
+        // }
+        // return redirect(
+        //   `/auth/error?message=Something went wrong.please try again!`
+        // );
+        console.error("Sign-in error:", error);
+        return false;
       }
     },
 
