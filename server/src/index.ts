@@ -16,7 +16,7 @@ import { consumeMessages } from "./helper.js";
 const server = createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: [process.env.CLIENT_APP_URL, "https://admin.socket.io"],
+    origin: "*",
   },
   adapter: createAdapter(redis),
 });
