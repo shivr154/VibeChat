@@ -14,7 +14,7 @@ It uses Redis for real-time message broadcasting and Kafka for storing message h
 - Postgres
 
 ## Demo:
-
+https://github.com/user-attachments/assets/4d9a74e7-147d-4071-9300-015155428681
 
 
 ## Features:
